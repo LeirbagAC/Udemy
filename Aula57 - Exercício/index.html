@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo Página</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <section class="container">
+        <h1>Calculadora</h1>
+
+        <input type="text" class="display">
+
+        <div id="calc">
+            <button class="botoes-calc" onclick="cleanDisplay()">C</button>
+            <button class="botoes-calc" onclick="appendButton('(')">(</button>
+            <button class="botoes-calc" onclick="appendButton(')')">)</button>
+            <button class="botoes-calc" onclick="appendButton('/')">/</button>
+
+            <button class="botoes-calc" onclick="appendButton('7')">7</button>
+            <button class="botoes-calc" onclick="appendButton('8')">8</button>
+            <button class="botoes-calc" onclick="appendButton('9')">9</button>
+            <button class="botoes-calc" onclick="appendButton('*')">*</button>
+
+            <button class="botoes-calc" onclick="appendButton('4')">4</button>
+            <button class="botoes-calc" onclick="appendButton('5')">5</button>
+            <button class="botoes-calc" onclick="appendButton('6')">6</button>
+            <button class="botoes-calc" onclick="appendButton('+')">+</button>
+
+            <button class="botoes-calc" onclick="appendButton('1')">1</button>
+            <button class="botoes-calc" onclick="appendButton('2')">2</button>
+            <button class="botoes-calc" onclick="appendButton('3')">3</button>
+            <button class="botoes-calc" onclick="appendButton('-')">-</button>
+
+            <button class="botoes-calc" onclick="calcular()">=</button>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

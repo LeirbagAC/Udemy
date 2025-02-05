@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    ---primary-color: rgb(10, 78, 109);
+    ---primary-color-darker: rgb(7, 46, 65);
+
+}
+/*#0a4e6d*/
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(---primary-color);
+    font-family: "Open sans", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.container{
+    max-width: 640px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px
+}
+
+.display {
+    width: 98%;
+    height: 2em;
+    font-size: 30px;
+    text-align: right;
+}
+
+.botoes-calc{
+    width: 23%;
+    height: 3em;
+    border: none;
+    margin: 3px;
+    cursor: pointer;
+    font-size: 19px;
+    background-color: rgb(227, 226, 226);
+}
+
+.botoes-calc:hover {
+    background-color: rgb(189, 189, 189);
+}
