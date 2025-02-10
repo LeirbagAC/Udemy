@@ -4,7 +4,7 @@ function rand(min, max) {
     return Math.floor(Math.random() * (max - min ) + min)
 }
 
-function esperAi(msg, tempo) {
+function esperaAi(msg, tempo) {
     return new Promise((resolve, reject) => {
         if(typeof msg !== 'string') reject('BAD Value');
 
@@ -14,14 +14,14 @@ function esperAi(msg, tempo) {
     });
 }
 
-esperAi('Frase 1', rand(1, 3))
+esperaAi('Frase 1', rand(1, 3))
 .then(resposta => {
     console.log(resposta);
-    return esperAi('Frase 2',  rand(1, 3));
+    return esperaAi('Frase 2',  rand(1, 3));
 })
 .then(resposta => {
     console.log(resposta);
-    return esperAi('Frase 3',  rand(1, 3)); //Pode testar o reject com o 222 no lugar de 'Frase 3'
+    return esperaAi('Frase 3',  rand(1, 3)); //Pode testar o reject com o 222 no lugar de 'Frase 3'
 })
 .then(resposta => {
     console.log(resposta);
