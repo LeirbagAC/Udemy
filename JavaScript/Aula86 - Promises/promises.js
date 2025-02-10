@@ -21,7 +21,7 @@ esperAi('Frase 1', rand(1, 3))
 })
 .then(resposta => {
     console.log(resposta);
-    return esperAi(222,  rand(1, 3)); //Testando o reject com o '222'
+    return esperAi('Frase 3',  rand(1, 3)); //Pode testar o reject com o 222 no lugar de 'Frase 3'
 })
 .then(resposta => {
     console.log(resposta);
@@ -30,4 +30,4 @@ esperAi('Frase 1', rand(1, 3))
     console.log('ERRO: ', e);
 });
 
-console.log('Issso vai aparecer primeiro!');
+console.log('Isso vai aparecer primeiro!');
