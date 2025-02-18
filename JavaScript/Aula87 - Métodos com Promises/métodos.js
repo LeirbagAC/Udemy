@@ -42,13 +42,13 @@ baixarPagina()
     })
     .catch(e => console.log(e));
 
-// Promise.all(promises)
-// .then(valor => {
-//     console.log(valor);
-// })
-// .catch( e => {
-//     console.log(e);
-// });
+Promise.all(promises)
+.then(valor => {
+    console.log(valor);
+})
+.catch( e => {
+    console.log(e);
+});
 
 // const promises2 = [
 //     esperaAi('Promise 1', rand(0, 3)),
