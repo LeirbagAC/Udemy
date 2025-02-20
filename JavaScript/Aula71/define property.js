@@ -1,3 +1,4 @@
+//Pense no GETTER como: O que acontece quando eu ler essa propriedade; e no SETTER o que acontence quando eu modificar o valor dessa propriedade
 function Produto(nome, preco, estoque) {
     // this.nome = nome;
     // this.preco = preco;
