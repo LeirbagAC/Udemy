@@ -1,9 +1,9 @@
-fetch('pessoas.json')
-  .then(resposta => resposta.json())
-  .then(json => carregaElementosNaPagina(json));
+// fetch('pessoas.json')
+//   .then(resposta => resposta.json())
+//   .then(json => carregaElementosNaPagina(json));
 
-// axios('pessoas.json')
-//   .then(resposta => carregaElementosNaPagina(resposta.data));
+axios('pessoas.json')
+  .then(resposta => carregaElementosNaPagina(resposta.data));
 
 function carregaElementosNaPagina(json) {
   const table = document.createElement('table');
@@ -18,6 +18,10 @@ function carregaElementosNaPagina(json) {
     let td2 = document.createElement('td');
     td2.innerHTML = pessoa.idade;
     tr.appendChild(td2);
+
+    let td3 = document.createElement('td');
+    td3.innerHTML = pessoa.salario;
+    tr.appendChild(td3);
 
     table.appendChild(tr);
   }
