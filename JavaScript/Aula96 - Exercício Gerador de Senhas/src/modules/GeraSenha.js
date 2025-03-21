@@ -36,40 +36,44 @@ export default class GeraSenha {
     getSymbols() {
         return '!@#$%^&*()_+-=[]{}|;:,.<>?';
     }
+
+    getRandomChar(str) {
+        const randIndex = Math.floor(Math.random() * str.length);
+        return str[randIndex];
+    }
     
     gera() {
         const tamanhoSenha = this.tamanho();
+
+        if(tamanhoSenha < 4) {
+            return resultado.innerHTML = 'Tamanho mínimo de 4 digitos'; 
+        }
+
         let caracteresPossiveis = '';
-        let senha = '';
+        let senha = [];
 
-        if(this.numeros.checked) {
-            caracteresPossiveis += this.getNumeros();
-        }
-
-        if(this.upperCase.checked) {
-            caracteresPossiveis += this.getUpperCase();
-        }
-
-        if(this.lowerCase.checked) {
-            caracteresPossiveis += this.getLowerCase();
-        }
-
-        if(this.symbols.checked) {
-            caracteresPossiveis += this.getSymbols();
-        }
+        if(this.numeros.checked) caracteresPossiveis += this.getNumeros();
+        if(this.upperCase.checked) caracteresPossiveis += this.getUpperCase();
+        if(this.lowerCase.checked) caracteresPossiveis += this.getLowerCase();
+        if(this.symbols.checked) caracteresPossiveis += this.getSymbols();
 
         if (caracteresPossiveis === '') {
-            resultado.textContent = 'Selecione pelo menos uma opção!';
-            return;
+            return resultado.textContent = 'Selecione pelo menos uma opção!';
         }
 
-        for(let i = 0; i < tamanhoSenha; i++) {
-            const randIndex = Math.floor(Math.random() * caracteresPossiveis.length);
-            senha += caracteresPossiveis[randIndex]
+        if(this.numeros.checked) senha.push(this.getRandomChar(this.getNumeros())); 
+        if(this.upperCase.checked) senha.push(this.getRandomChar(this.getUpperCase())); 
+        if(this.lowerCase.checked) senha.push(this.getRandomChar(this.getLowerCase())); 
+        if(this.symbols.checked) senha.push(this.getRandomChar(this.getSymbols())); 
+
+        const minimo = senha.length;
+        for(let i = minimo; i < tamanhoSenha; i++) {
+            senha.push(this.getRandomChar(caracteresPossiveis));
         }
 
-        resultado.innerHTML = senha;
-        return senha;
+        const senhaFinal = senha.join('');
+        resultado.textContent = senhaFinal;
+        return senhaFinal;
     }
     
 }
@@ -79,4 +83,3 @@ const gerador = new GeraSenha(caracteres, numeros, upperCase, lowerCase, symbols
 button.addEventListener('click', () => {
     gerador.gera()  
 })
-
