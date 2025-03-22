@@ -49,6 +49,10 @@ export default class GeraSenha {
             return resultado.innerHTML = 'Tamanho mínimo de 4 digitos'; 
         }
 
+        if(tamanhoSenha > 20) {
+            return resultado.innerHTML = 'Tamanho máximo de 20 digitos'; 
+        }
+
         let caracteresPossiveis = '';
         let senha = [];
 
