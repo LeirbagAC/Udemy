@@ -5,7 +5,7 @@ const app = express();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.CONNECTIONSTRING) //Feito assim para evitar upar a senha para o git
   .then(() => {
-    console.log('Conectei à base da dados!');
+    // console.log('Conectei à base da dados!');
     app.emit('pronto')
     })
     .catch(e => console.log('Erro de conexão:', e));
