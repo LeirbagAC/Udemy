@@ -1,4 +1,4 @@
-const HomeModel = require('../models/HomeModel');
+// const HomeModel = require('../models/HomeModel');
 
 // HomeModel.create({
 //     titulo: 'Outro título de teste',
@@ -7,9 +7,9 @@ const HomeModel = require('../models/HomeModel');
 //     .then(dados => console.log(dados))
 //     .catch(e => console.log(e));
 
-HomeModel.find()
-    .then(dados => console.log(dados))
-    .catch(e => console.log(e));
+// HomeModel.find()
+//     .then(dados => console.log(dados))
+//     .catch(e => console.log(e));
 
 exports.paginaInicial = (req, res) => {
     res.render('index');
