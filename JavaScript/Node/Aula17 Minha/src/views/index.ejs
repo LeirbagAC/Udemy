@@ -1,0 +1,24 @@
+<%- include('includes/head'); %>
+<body>
+
+  <section class="container">
+    <h1>
+      Lorem Normal
+        <!-- <% if(typeof titulo !== 'undefined') { %>
+          <%= titulo %>
+        <% } else {%>
+          O título não foi enviado
+        <% }%> -->
+
+        <!-- <% numeros.forEach(num => { %>
+          <%= num %><br>
+        <% }); %> -->
+    </h1>
+    <form method="POST" action="/cadastro">
+      <input type="text" name="nome">
+      <button type="submit">Enviar</button>
+    </form>
+
+  </section>
+  
+<%- include('includes/footer'); %>
