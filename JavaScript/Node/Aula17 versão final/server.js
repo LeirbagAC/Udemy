@@ -1,9 +1,9 @@
-require('dotenv').config();
+require('dotenv').config(); //Para trabalhar com variáveis de ambiente e e não fazer upload no git
 
 const express = require('express');
-const app = express();
-const mongoose = require('mongoose');
+const app = express(); //Iniciou o express
 
+const mongoose = require('mongoose'); //Para modelar o banco de dados 
 mongoose.connect(process.env.CONNECTIONSTRING) //Feito assim para evitar upar a senha para o git
   .then(() => {
     app.emit('pronto')
