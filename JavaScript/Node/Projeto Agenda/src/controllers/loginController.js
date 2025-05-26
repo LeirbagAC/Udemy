@@ -5,12 +5,28 @@ exports.index = (req, res) => {
 };
 
 exports.register = async (req, res) => {
+    try {
     const login = new Login(req.body);
     await login.register();
 
-    if(this.body.erros > 0) {
+    if(login.erros.length > 0) {
         req.flash('erros', login.erros)
+        req.session.save( () => {
+            return res.redirect('/login/index');
+        });
+        return;
     }
 
-    res.send(login.erros);
+        req.flash('success', 'Seu usuário foi criado com sucesso.')
+        req.session.save( () => {
+        return res.redirect('/login/index');
+        });
+    // return res.send(login.erros); Isso estava dando erro
+
+    } catch(e) {
+        console.log(e);
+        return res.render('404');
+    }
+
+
 };
